@@ -4,12 +4,12 @@ const https = require("https");
 const key = require(__dirname + "/config.js");
 
 const app = express();
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.render("Home");
 });
 
 app.post("/", function(req, res) {
